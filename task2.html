@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-2</title>
+  </head>
+  <body>
+    <h1>Task-2</h1>
+    <p>Go to Inspect and then console, you will see the output</p>
+    <script>
+      function sortStringAlphabetically(inputString) {
+        var charArray = inputString.split("");
+        var sortedArray = charArray.sort();
+        var sortedString = sortedArray.join("");
+        return sortedString;
+      }
+      var inputString = "webmaster";
+      var sortedResult = sortStringAlphabetically(inputString);
+      console.log(sortedResult); 
+    </script>
+  </body>
+</html>

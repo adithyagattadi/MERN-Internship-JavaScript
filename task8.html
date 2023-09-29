@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-5</title>
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div style="border: 2px solid black; position: absolute; padding: 10px; padding-left: 100px; padding-right: 100px; left: 450px; top: 50px; background-image: linear-gradient(180deg, yellow, pink);">
+    <h1 style="text-align: center;">Registration Form</h1>
+    <form id="myForm">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="fname" required>
+        <span class="error-message" id="fname-error"></span><br><br>
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lname" required>
+        <span class="error-message" id="lname-error"></span><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error-message" id="email-error"></span><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <span class="error-message" id="password-error"></span><br><br>
+
+        <label for="repassword">Re-enter Password:</label>
+        <input type="password" id="repassword" name="repassword" required>
+        <span class="error-message" id="repassword-error"></span><br><br>
+
+        <tr>
+            <td>Gender:</td>
+            <td>
+                <input type="radio" name="radio" id="radio">Male 
+                <input type="radio" name="radio" id="radio">Female
+            </td>
+        </tr> <br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+        <span class="error-message" id="age-error"></span><br><br>
+
+        <label for="pnumber">Phone Number:</label>
+        <input type="number" id="pnumber" name="age" required>
+        <span class="error-message" id="pnumber-error"></span><br><br>
+
+        <label for="address">Address:</label>
+        <textarea name="address" id="address" cols="50" rows="5"></textarea>
+        <span class="error-message" id="address-error"></span><br><br>
+        
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required>
+        <span class="error-message" id="state-error"></span><br><br>
+
+        <label for="country">Country:</label>
+        <td>
+            <select name="country">
+            <option value="">Choose your country</option>
+            <option value="India">India</option>
+            <option value="US">United States</option>
+            </select>
+        </td>
+        <span class="error-message" id="country-error"></span><br><br>
+
+        <tr>
+            <td style="text-align: center;"><b>Languages Known</b></td>
+            <td>
+                <input type="checkbox" name="checkbox" id="checkbox">English
+                <input type="checkbox" name="checkbox" id="checkbox">Kannada
+                <input type="checkbox" name="checkbox" id="checkbox">Hindi
+                <input type="checkbox" name="checkbox" id="checkbox">Telugu
+            </td>
+        </tr> <br><br>
+
+        <td><input type="checkbox" name="checkbox" id="checkbox">Hearby I declare all the given details are true</td>
+        <p>Log in to <a href="https://ethnus.com/">Ethnus</a> website </p>
+
+        <button style="text-align: center; background-color: red; color: white; border-radius: 20px; padding-right: 20px; padding-left: 20px; position: relative; left: 200px;" type="button" onclick="validateForm()">Register</button>
+    </div>
+    </form>
+
+    <script>
+        function validateForm() {
+            const fname = document.getElementById("fname");
+            const lname = document.getElementById("lname");
+            const email = document.getElementById("email");
+            const password = document.getElementById("password");
+            const repassword = document.getElementById("repassword");
+            const age = document.getElementById("age");
+            const pnumber = document.getElementById("pnumber");
+            const state = document.getElementById("state");
+            const address = document.getElementById("address");
+            const fnameErr = document.getElementById("fname-error");
+            const lnameErr = document.getElementById("lname-error");
+            const emailErr = document.getElementById("email-error");
+            const passwordErr = document.getElementById("password-error");
+            const repasswordErr = document.getElementById("repassword-error");
+            const ageErr = document.getElementById("age-error");
+            const pnumberErr = document.getElementById("pnumber-error");
+            const stateErr = document.getElementById("state-error");
+            const addressErr = document.getElementById("address-error");
+
+            if (fname.value.trim() === "") {
+                fname.classList.add("error");
+                fnameErr.textContent = "POOR";
+                isValid = false;
+            } else {
+                fname.classList.remove("error");
+                fnameErr.textContent = "";
+            }
+
+            if (lname.value.trim() === "") {
+                lname.classList.add("error");
+                lnameErr.textContent = "POOR";
+                isValid = false;
+            } else {
+                lname.classList.remove("error");
+                lnameErr.textContent = "";
+            }
+
+            if (email.value.trim() === "") {
+                email.classList.add("error");
+                emailErr.textContent = "POOR";
+                isValid = false;
+            } else {
+                email.classList.remove("error");
+                emailErr.textContent = "";
+            }
+
+            if (password.value.trim() === "") {
+                password.classList.add("error");
+                passwordErr.textContent = "POOR";
+                isValid = false;
+            } else {
+                password.classList.remove("error");
+                passwordErr.textContent = "";
+            }
+
+            if (repassword.value.trim() === "") {
+                password.classList.add("error");
+                repasswordErr.textContent = "POOR OR MISMATCH";
+                isValid = false;
+            } else {
+                repassword.classList.remove("error");
+                repasswordErr.textContent = "";
+            }
+
+            if (age.value.trim() === "") {
+                age.classList.add("error");
+                ageErr.textContent = "POOR";
+                isValid = false;
+            } else {
+                age.classList.remove("error");
+                ageErr.textContent = "";
+            }
+
+            if (address.value.trim() === "") {
+                address.classList.add("error");
+                addressErr.textContent = "POOR";
+                isValid = false;
+            } else {
+                address.classList.remove("error");
+                addressErr.textContent = "";
+            }
+
+            if (pnumber.value.trim() === "") {
+                pnumber.classList.add("error");
+                pnumberErr.textContent = "POOR";
+                isValid = false;
+            } else {
+                pnumber.classList.remove("error");
+                pnumberErr.textContent = "";
+            }
+
+            if (state.value.trim() === "") {
+                state.classList.add("error");
+                stateErr.textContent = "POOR";
+                isValid = false;
+            } else {
+                state.classList.remove("error");
+                stateErr.textContent = "";
+            }
+        }
+    </script>
+</body>
+</html>

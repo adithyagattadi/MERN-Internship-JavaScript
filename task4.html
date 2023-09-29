@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time Display</title>
+    <style>
+        #date, #time {
+            font-size: 24px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="displayDateButton">show date</button>
+    <div id="date"></div>
+    
+    <button id="displayTimeButton">show Time</button>
+    <div id="time"></div>
+
+    <script>
+        function updateDate() {
+            const currentDate = new Date();
+            const dateElement = document.getElementById("date");
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            dateElement.textContent = currentDate.toLocaleDateString(undefined, options);
+        }
+        function updateTime() {
+            const currentDate = new Date();
+            const timeElement = document.getElementById("time");
+            const options = { hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+            const timeString = currentDate.toLocaleString('en-US', options);
+            timeElement.textContent = timeString + " GST+0530";
+        }
+
+        const displayDateButton = document.getElementById("displayDateButton");
+        displayDateButton.addEventListener("click", updateDate);
+
+        const displayTimeButton = document.getElementById("displayTimeButton");
+        displayTimeButton.addEventListener("click", updateTime);
+    </script>
+</body>
+</html>

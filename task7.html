@@ -1,0 +1,30 @@
+<html>
+  <head> </head>
+  <body>
+    <form>
+      <img
+        id="trainimg" src="https://banner2.cleanpng.com/20180729/lbf/kisspng-train-rail-transport-locomotive-wall-decal-sticker-train-clipart-black-and-white-5b5e88bd3eecc7.8830485015329220452578.jpg" height="150px" width="250px"/>
+      <center>
+        <h1 style="color: blue;">Click the below buttons to handle animation</h1>
+        <input type="button" value="Start" onclick="moveRight();" />
+        <input type="button" value="Stop" onclick="moveLeft();" />
+      </center>
+    </form>
+    <script type="text/javascript">
+      var img = null;
+      function init() {
+        img = document.getElementById("trainimg");
+        img.style.position = "relative";
+        img.style.left = "50px";
+        img.style.right = "50px";
+      }
+      function moveRight() {
+        img.style.left = parseInt(img.style.left) + 100 + "px";
+      }
+      function moveLeft() {
+        img.style.right = parseInt(img.style.right) + 100 + "px";
+      }
+      window.onload = init;
+    </script>
+  </body>
+</html>
